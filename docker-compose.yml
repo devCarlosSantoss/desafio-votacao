@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  db:
+    image: postgres:13
+    container_name: postgres_container
+    restart: always
+    environment:
+      POSTGRES_USER: postgres_dev
+      POSTGRES_PASSWORD: 246DFg5efs5dc4s5d4acb5s
+      POSTGRES_DB: coopvote
+    ports:
+      - "5433:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
